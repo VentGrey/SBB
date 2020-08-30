@@ -2,10 +2,10 @@
 
 if [[ $1 = -h ]] || [[ $1 = "--help" ]]
 then
-    echo 'New C/C++ Project script.'
-    echo 'v1.0 (made by José Joaquín Zubieta Rico)'
+    echo 'New C/C++ Project script,
+          v1.1 (made by José Joaquín Zubieta Rico & Omar Jair Purata Funes)
 
-newcprojectc.sh [-h|--help] args.
+newproject.sh [-h|--help] args.
 The possible args are 3, and always will
 be interpretated in this way:
 
@@ -25,26 +25,27 @@ fi
 if [[ -n "$1" ]]
 then
     mkdir "$1"
-    if [[ $? != 0 ]]
+    if ! [[ $? ]]
     then
+        echo "Failed to create directory"
         exit
     fi
-    cd "$1"
+    cd "$1" || exit 1
 else
     mkdir new_cpp_project
-    cd new_cpp_project
+    cd new_cpp_project || exit 1
 fi
 
 if [[ -n "$2" ]]
 then
-    PROJECT_NAME="$(echo \"$2\")" # To allow echo to subtitute spaces and other codes.
+    PROJECT_NAME="$("\"$2\"")" # To allow echo to subtitute spaces and other codes.
 else
     PROJECT_NAME="Project Name"
 fi
 
 if [[ -n "$3" ]]
 then
-    PROJECT_DESC="$(echo \"$3\")"
+    PROJECT_DESC="$("\"$3\"")"
 else
     PROJECT_DESC="Description of the project."
 fi
