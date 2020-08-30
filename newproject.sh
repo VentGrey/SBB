@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $1 = -h ]] || [[ $1 = "--help" ]]; then
+help() {
     echo -e "New \e[92mC\e[39m/\e[95mC++\e[39m Project script.
           \e[34mversion: 1.4\e[39m
 
@@ -20,12 +20,23 @@ be interpretated in this way:
     arg2        Name of the prooject            'Name of the Project'
     arg3        Description of the project      'Description of the project'
 
-Please do not use % in you arg2 or arg3 because it will cause troubles
+Please do not use % in you arg2 or arg3 because it will cause trouble
 with sed substitution.
+
 For help please use
 
     -h  --help  Print this menu"
         exit
+}
+
+if [[ $1 = -h ]] || [[ $1 = "--help" ]]; then
+    help
+fi
+
+if [[ "$#" = 0 ]]; then
+    help
+elif [[ "$#" != 4 ]]; then
+    echo "Illegal number of parameters"
 fi
 
 if [[ -n "$1" ]]; then
