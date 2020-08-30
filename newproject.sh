@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $1 = -h ]] || [[ $1 = "--help" ]]
-then
+if [[ $1 = -h ]] || [[ $1 = "--help" ]]; then
     echo 'New C/C++ Project script,
           v1.1 (made by José Joaquín Zubieta Rico & Omar Jair Purata Funes)
 
@@ -22,8 +21,7 @@ For help please use
         exit
 fi
 
-if [[ -n "$1" ]]
-then
+if [[ -n "$1" ]]; then
     mkdir "$1"
     if ! [[ $? ]]
     then
@@ -36,15 +34,13 @@ else
     cd new_cpp_project || exit 1
 fi
 
-if [[ -n "$2" ]]
-then
+if [[ -n "$2" ]]; then
     PROJECT_NAME="$("\"$2\"")" # To allow echo to subtitute spaces and other codes.
 else
     PROJECT_NAME="Project Name"
 fi
 
-if [[ -n "$3" ]]
-then
+if [[ -n "$3" ]]; then
     PROJECT_DESC="$("\"$3\"")"
 else
     PROJECT_DESC="Description of the project."
