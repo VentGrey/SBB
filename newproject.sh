@@ -1,23 +1,30 @@
 #!/usr/bin/env bash
 
 if [[ $1 = -h ]] || [[ $1 = "--help" ]]; then
-    echo 'New C/C++ Project script,
-          v1.1 (made by José Joaquín Zubieta Rico & Omar Jair Purata Funes)
+    echo -e "New \e[92mC\e[39m/\e[95mC++\e[39m Project script.
+          \e[34mversion: 1.4\e[39m
+
+          Made by:
+
+          - José Joaquín Zubieta Rico (\e[36mSuavesito-Olimpiada\e[39m)
+          - Omar Jair Purata Funes (\e[35mVentGrey\e[39m)
+
+Usage:
 
 newproject.sh [-h|--help] args.
 The possible args are 3, and always will
 be interpretated in this way:
 
     ARG         DESCRIPTION                     DEFAULT
-    arg1        Name of the project directory   "new_c_project"
-    arg2        Name of the prooject            "Name of the Project"
-    arg3        Description of the project      "Description of the project"
+    arg1        Name of the project directory   'new_c_project'
+    arg2        Name of the prooject            'Name of the Project'
+    arg3        Description of the project      'Description of the project'
 
 Please do not use % in you arg2 or arg3 because it will cause troubles
 with sed substitution.
 For help please use
 
-    -h  --help  Print this menu'
+    -h  --help  Print this menu"
         exit
 fi
 
