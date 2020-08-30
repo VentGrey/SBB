@@ -53,8 +53,10 @@ else
     PROJECT_DESC="Description of the project."
 fi
 
+# TODO: Change this line to create a new file struct from another script.
 cp -r ~/.config/scripts/programming/cppproject/* ./
 
+# TODO: Include this in a function
 mkdir -p "include"
 mkdir -p "test/in"
 mkdir -p "test/out"
@@ -65,6 +67,7 @@ DATE=$(date "+%m-%d-%Y")
 
 sed -i "3,3s/00-00-0000/$DATE/" README.md
 sed -i "18,19s/00-00-0000/$DATE/" README.md
+# TODO: Write a C or CPP depending on users choice
 sed -i "3,3s/00-00-0000/$DATE/" src/main.cpp
 
 sed -i "1,1s%NAME%$PROJECT_NAME%" README.md
